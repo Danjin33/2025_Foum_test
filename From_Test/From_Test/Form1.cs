@@ -18,6 +18,8 @@ namespace From_Test
 
 
             //模範解答では、iとjを位置設定の値に掛けてた
+            // TestButton.Location = new Point(50 * i,50 * j);
+
             int tate = 20;
             for (int j = 0; j < 6; j++)
             {
@@ -38,26 +40,31 @@ namespace From_Test
                     //ボタン内のテキストを設定
                     testButton.Text = "あいうえお";
 
+                    //マウスホバーなるものもあるらしい
+                    testButton.Click += hogehogeClick;
+
+
                     //コントロールのボタンを設置
                     Controls.Add(testButton);
 
-                    iti += 60;
+                    iti += 50;
                 }
 
-             tate += 60;
+             tate += 50;
 
             }
-
-
-
             
-
-
         }
+        //自分で作成することも可能
+        private void hogehogeClick(object sender, EventArgs e)
+        {
+            MessageBox.Show("人体模型");
+        }
+
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("C#の世界へようこそ！");
+            MessageBox.Show("(´･ω･`)ｱﾜﾜ");
         }
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
