@@ -54,6 +54,8 @@ namespace From_Test
             // MessageBox.Show("人体模型");
 
             //クリックしたらここの処理を実行する
+
+
             //　!_enadleのお陰で切り替わる
             SetEnable(!_enable);
 

@@ -22,12 +22,16 @@ namespace From_Test
         //ボタンが横に何個並ぶか
         const int BOAORD_SIZE_Y = 3;
 
+        private TestButton[,] _buttonArray;
+
 
 
         public Form1()
         {
             InitializeComponent();
 
+            //_buttonArrayの初期化
+            _buttonArray = new TestButton[BOAORD_SIZE_Y, BOAORD_SIZE_X];
 
             //模範解答では、iとjを位置設定の値に掛けてた
             // TestButton.Location = new Point(50 * i,50 * j);
@@ -43,7 +47,10 @@ namespace From_Test
                     //インスタンスの生成
                     TestButton testButton = new TestButton
                         (new Point( BUTTON_SIZE_X * i, BUTTON_SIZE_Y * j),
-                        new Size(BUTTON_SIZE_X,BUTTON_SIZE_Y), "あいうえお");
+                        new Size(BUTTON_SIZE_X,BUTTON_SIZE_Y), "(´･ω･`)ぅゎー");
+
+                    //配列にボタンの参照を追加
+                    _buttonArray[j,i] = testButton;
 
                     //コントロールのボタンを設置
                     Controls.Add(testButton);
@@ -52,7 +59,8 @@ namespace From_Test
                 }
 
             }
-
+            //          縦 横
+            _buttonArray[1,0].SetEnable(true);
         }
 
 
