@@ -35,7 +35,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(603, 0);
+            this.button1.Location = new System.Drawing.Point(514, 12);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(196, 127);
             this.button1.TabIndex = 0;
@@ -58,7 +58,6 @@
             this.listView1.Size = new System.Drawing.Size(121, 97);
             this.listView1.TabIndex = 2;
             this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
             // Form1
             // 
