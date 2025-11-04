@@ -35,12 +35,13 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(514, 12);
+            this.button1.BackColor = System.Drawing.SystemColors.Window;
+            this.button1.Location = new System.Drawing.Point(588, 12);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(196, 127);
             this.button1.TabIndex = 0;
             this.button1.Text = "牡丹　1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // dateTimePicker1
@@ -63,6 +64,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Goldenrod;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.dateTimePicker1);

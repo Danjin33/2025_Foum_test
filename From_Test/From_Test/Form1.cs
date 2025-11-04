@@ -17,10 +17,10 @@ namespace From_Test
 
 
         //ボタンが縦に何個並ぶか
-        const int BOAORD_SIZE_X = 3;
+        const int BOARD_SIZE_X = 3;
 
         //ボタンが横に何個並ぶか
-        const int BOAORD_SIZE_Y = 3;
+        const int BOARD_SIZE_Y = 3;
 
         //TestButtonの二次元配列
         private TestButton[,] _buttonArray;
@@ -32,24 +32,24 @@ namespace From_Test
             InitializeComponent();
 
             //_buttonArrayの初期化
-            _buttonArray = new TestButton[BOAORD_SIZE_Y, BOAORD_SIZE_X];
+            _buttonArray = new TestButton[BOARD_SIZE_Y, BOARD_SIZE_X];
 
             //模範解答では、iとjを位置設定の値に掛けてた
             // TestButton.Location = new Point(50 * i,50 * j);
 
      
-            for (int j = 0; j < BOAORD_SIZE_X; j++)
+            for (int j = 0; j < BOARD_SIZE_X; j++)
             {
 
 
-                for (int i = 0; i < BOAORD_SIZE_Y; i++)
+                for (int i = 0; i < BOARD_SIZE_Y; i++)
                 {
 
                     //インスタンスの生成
                     TestButton testButton = new TestButton
                         (this, i, j,  
-                        new Point( BUTTON_SIZE_X * i, BUTTON_SIZE_Y * j),
-                        new Size(BUTTON_SIZE_X,BUTTON_SIZE_Y), "(´･ω･`)ぅゎー");
+                        
+                        new Size(BUTTON_SIZE_X,BUTTON_SIZE_Y), "(´･ω･`)ﾔｷｲﾓ...");
 
                     //配列にボタンの参照を追加
                     _buttonArray[j,i] = testButton;
@@ -66,6 +66,11 @@ namespace From_Test
 
         public TestButton GetTestButton(int x, int y)
         {
+            //－1と3以上を入れたときにバグらないようにする
+
+            if (x < 0 || x >= BOARD_SIZE_X) return null;
+            if (y < 0 || y >= BOARD_SIZE_Y) return null;
+
             return _buttonArray[y, x];
         }
 
