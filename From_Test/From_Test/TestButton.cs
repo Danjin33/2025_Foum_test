@@ -10,14 +10,16 @@ namespace From_Test
 {
     //Buttonクラスを継承した
     //TestButtonクラスを作成してください。
-    internal class TestButton : Button
+    /*internal*/ public class TestButton : Button
     {
         private Color _onColor = Color.Blue;
         private Color _offColor = Color.Red;
 
         private bool _enable;
 
+        private Form1 _form1;
 
+  
         public void SetEnable(bool on)
         {
             //オンとオフの設定
@@ -32,8 +34,11 @@ namespace From_Test
             }
         }
 
-        public TestButton(Point position,Size size, string test)
-        { 
+        public TestButton(Form1 form1, Point position,Size size, string test)
+        {
+            _form1 = form1;
+
+
             //ボタンの位置を決めるやつ
             Location = position;
 
@@ -55,9 +60,10 @@ namespace From_Test
 
             //クリックしたらここの処理を実行する
 
-
+            //クリックしたとこ以外が反応するやつ
+            _form1.GetTestButton(1, 1).SetEnable(true);
             //　!_enadleのお陰で切り替わる
-            SetEnable(!_enable);
+           // SetEnable(!_enable);
 
         }
     }
