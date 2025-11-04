@@ -13,11 +13,19 @@ namespace From_Test
     /*internal*/ public class TestButton : Button
     {
         private Color _onColor = Color.Blue;
+
         private Color _offColor = Color.Red;
 
         private bool _enable;
 
+        //Form1の参照
         private Form1 _form1;
+
+        //横位置
+        private int _x;
+
+        //縦位置
+        private int _y;
 
   
         public void SetEnable(bool on)
@@ -34,9 +42,16 @@ namespace From_Test
             }
         }
 
-        public TestButton(Form1 form1, Point position,Size size, string test)
+        public TestButton(Form1 form1, int x, int y, Point position,Size size, string test)
         {
+            //Form1の参照の保存
             _form1 = form1;
+
+            //横位置の保存
+            _x = x;
+
+            //縦位置の保存
+            _y = y;
 
 
             //ボタンの位置を決めるやつ
@@ -61,7 +76,7 @@ namespace From_Test
             //クリックしたらここの処理を実行する
 
             //クリックしたとこ以外が反応するやつ
-            _form1.GetTestButton(1, 1).SetEnable(true);
+            _form1.GetTestButton(_x, _y).SetEnable(true);
             //　!_enadleのお陰で切り替わる
            // SetEnable(!_enable);
 
