@@ -37,7 +37,9 @@ namespace From_Test
             //模範解答では、iとjを位置設定の値に掛けてた
             // TestButton.Location = new Point(50 * i,50 * j);
 
-     
+           
+
+
             for (int j = 0; j < BOARD_SIZE_X; j++)
             {
 
@@ -56,11 +58,34 @@ namespace From_Test
 
                     //コントロールのボタンを設置
                     Controls.Add(testButton);
+                  
 
-               
                 }
 
             }
+            //ランダム関数　多分1か2になってる
+            Random random = new Random();
+
+            for (int j = 0; j < BOARD_SIZE_X; j++)
+            {
+                for (int i = 0; i < BOARD_SIZE_Y; i++)
+                {
+
+                    int kawamuki = random.Next(2);
+
+                    if (kawamuki == 1)
+                    {
+                        //ランダム化の鍵
+                        _buttonArray[j, i].SetEnable(true);
+                    }
+                    else
+                    {
+                        _buttonArray[j, i].SetEnable(false);
+                    }
+                }
+            }
+
+
 
         }
 

@@ -74,6 +74,8 @@ namespace From_Test
             }
         }
 
+
+
         //　!_enadleのお陰で切り替わる
         public void Toggle()
         {

@@ -18,7 +18,7 @@ namespace From_Test
             
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());//ここ変！！
+            Application.Run(new Form1());
         }
     }
 }
