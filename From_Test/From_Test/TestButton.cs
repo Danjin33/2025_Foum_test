@@ -74,6 +74,11 @@ namespace From_Test
             }
         }
 
+        //ここでオンかオフかを見てる
+        public bool InEnable()
+        {
+            return _enable;
+        }
 
 
         //　!_enadleのお陰で切り替わる
@@ -95,8 +100,9 @@ namespace From_Test
             _form1.GetTestButton(_x + 1, _y)?.Toggle();
             _form1.GetTestButton(_x, _y - 1)?.Toggle();
             _form1.GetTestButton(_x, _y + 1)?.Toggle();
-            
-            /*
+
+
+           /*
             //かっちょいい書き方
             for (int i = 0; i < _toggleData.Length; i++)
             { 
@@ -122,4 +128,6 @@ namespace From_Test
         };
         */
     }
+
+
 }

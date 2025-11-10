@@ -23,7 +23,7 @@ namespace From_Test
         const int BOARD_SIZE_Y = 3;
 
         //TestButtonの二次元配列
-        private TestButton[,] _buttonArray;
+        public TestButton[,] _buttonArray;
 
 
 
@@ -63,6 +63,11 @@ namespace From_Test
                 }
 
             }
+            //ちょっとずるした
+            //_buttonArrayの最初の中身を出してる
+            TestButton saishoButton = _buttonArray[0, 0];
+
+
             //ランダム関数　多分1か2になってる
             Random random = new Random();
 
@@ -85,6 +90,19 @@ namespace From_Test
                 }
             }
 
+            //わりとずるした
+            bool hidariue = saishoButton.InEnable();
+
+            for (int j = 0; j < BOARD_SIZE_X; j++)
+            {
+                for (int i = 0; i < BOARD_SIZE_Y; i++)
+                {
+                    //仕上げは学校で。疲れた。
+
+
+                }
+
+            }
 
 
         }
