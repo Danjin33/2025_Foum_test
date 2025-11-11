@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ProgressBar;
 
 namespace From_Test
 {
@@ -13,8 +15,7 @@ namespace From_Test
     /*internal*/
     public class TestButton : Button
     {
-
-
+        
         private Color _onColor = Color.Yellow;
 
         private Color _offColor = Color.Purple;
@@ -30,7 +31,7 @@ namespace From_Test
         //縦位置
         private int _y;
 
-
+        private int _count;
 
 
         public TestButton(Form1 form1, int x, int y, Size size, string test)
@@ -57,6 +58,8 @@ namespace From_Test
             SetEnable(false);
 
             Click += hogehogeClick;
+
+            _form1.count = _count;
 
         }
 
@@ -87,6 +90,8 @@ namespace From_Test
             SetEnable(!_enable);
         }
 
+        
+
         //クリックしたらここの処理を実行する
         private void hogehogeClick(object sender, EventArgs e)
         {
@@ -101,7 +106,6 @@ namespace From_Test
             _form1.GetTestButton(_x, _y - 1)?.Toggle();
             _form1.GetTestButton(_x, _y + 1)?.Toggle();
 
-
            /*
             //かっちょいい書き方
             for (int i = 0; i < _toggleData.Length; i++)
@@ -115,6 +119,12 @@ namespace From_Test
                 }
             }
             */
+
+            if (_form1.Isclear())
+            {
+                MessageBox.Show("クリアだよー");
+            }
+
         }
         /*
         //かっちょいいやつ

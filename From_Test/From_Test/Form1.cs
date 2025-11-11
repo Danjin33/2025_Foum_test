@@ -25,7 +25,9 @@ namespace From_Test
         //TestButtonの二次元配列
         public TestButton[,] _buttonArray;
 
+        public int count { get; set; } = 0;
 
+       
 
         public Form1()
         {
@@ -63,7 +65,7 @@ namespace From_Test
                 }
 
             }
-            //ちょっとずるした
+     
             //_buttonArrayの最初の中身を出してる
             TestButton saishoButton = _buttonArray[0, 0];
 
@@ -90,21 +92,64 @@ namespace From_Test
                 }
             }
 
-            //わりとずるした
+            //左上の中身がオンかオフかを入れてる
             bool hidariue = saishoButton.InEnable();
+
+            count = 0;
 
             for (int j = 0; j < BOARD_SIZE_X; j++)
             {
                 for (int i = 0; i < BOARD_SIZE_Y; i++)
                 {
-                    //仕上げは学校で。疲れた。
+                    bool kakuninn = _buttonArray[j,i].InEnable();
+
+                    if(kakuninn = hidariue)
+                    {
+                        count++;
+                    }
+                    else
+                    {
+                        break;
+                    }
 
 
                 }
 
             }
 
+            
 
+
+        }
+
+        public bool Isclear()
+        {
+            //_buttonArrayの最初の中身を出してる
+            TestButton saishoButton = _buttonArray[0, 0];
+
+            //左上の中身がオンかオフかを入れてる
+            bool hidariue = saishoButton.InEnable();
+
+            count = 0;
+
+            for (int j = 0; j < BOARD_SIZE_X; j++)
+            {
+                for (int i = 0; i < BOARD_SIZE_Y; i++)
+                {
+                    bool kakuninn = _buttonArray[j, i].InEnable();
+
+                    if (kakuninn == hidariue)
+                    {
+                        count++;
+                    }
+ 
+
+
+                }
+
+            }
+
+            return count == 9;
         }
 
         public TestButton GetTestButton(int x, int y)
