@@ -122,7 +122,7 @@ namespace From_Test
 
             if (_form1.Isclear())
             {
-                MessageBox.Show("クリアだよー");
+                MessageBox.Show("クリアだよー\n焼き芋食いてぇ");
             }
 
         }
